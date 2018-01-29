@@ -1,0 +1,28 @@
+<ng-template #primero>
+    <div>Hola el primero</div>
+  </ng-template>
+  <ng-template #segundo>
+    <div> Hola el segundo</div>
+  </ng-template>
+
+
+<section class="animated fadeIn">
+    <h1>Simple IF</h1>
+    <button (click)='(active = !active)'> Ver detalles </button>
+    <div>Valor de la propiedad: {{ active }}</div>
+    <p *ngIf="active">El gato es un gato siames de 4 añitos abandonado por su madre.</p>
+  
+  
+    <h1>If Else - ngTemplate</h1>
+    <div *ngIf="active; else falso">
+      Esto se enseña cuando "active" es {{active}}
+    </div>
+    <ng-template #falso>
+      De lo contrario si "active" es {{active}} se mostrará este mensaje
+    </ng-template>
+  
+  
+    <h1>ng-containers & ng-templates</h1>
+    <ng-container *ngIf="active; then primero else segundo"></ng-container>
+  </section>
+  

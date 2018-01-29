@@ -1,0 +1,22 @@
+
+
+<div class="jumbotron">
+    <h1 class="display-4">{{ text }}</h1>
+    <p class="lead">{{ description }}</p>
+    <hr class="my-4">
+    <p>{{autor}}</p>
+    <p class="lead">
+      <button class="btn btn-primary btn-lg" (click)="onClick($event)">Click me! 
+          <span class="badge badge-light">{{clicks}}</span>  
+      </button>
+    </p>
+</div>
+
+<input type="text" [(ngModel)]="hero.name" placeholder="inser text" [ngModelOptions]="{ updateOn: 'blur' }">
+<br>
+<input [value]="hero.name" (input)="hero.name=$event.target.value" >
+
+
+<hr>
+<input #box (keyup)="box.value">
+<p>Su nombre es: {{box.value}}</p>

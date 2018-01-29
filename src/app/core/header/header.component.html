@@ -1,0 +1,16 @@
+<header>
+  <img class="angular5" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+  <a *ngFor="let item of menuItems" [routerLink]="item.link" class="menu-link" routerLinkActive="menu-link--active">{{item.caption}}</a>
+
+ <!--  <div class="btn-group float-right">
+    <button type="button" class="btn btn-danger dropdown-toggle" (click)="visible = !visible">
+      {{currentLanguage}}
+    </button>
+    <div class="dropdown-menu" [style.display]="visible ? 'block' : 'none' ">
+      <a class="dropdown-item" href="#" *ngFor="let language of languages" (click)="setLanguage(language)">{{language}}</a>
+    </div>
+  </div>
+-->
+
+
+</header>

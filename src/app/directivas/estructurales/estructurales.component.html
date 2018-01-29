@@ -1,0 +1,12 @@
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" *ngFor="let item of menuItems">
+    <a class="nav-link" [routerLink]="item.link" routerLinkActive="active" >{{item.caption}}</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+
+
+

@@ -1,0 +1,21 @@
+
+
+<div class="row animated slideInRight">
+  <div class="col-sm-3 person-grid" *ngFor="let person of persons2 | slice:0:10">
+    <div class="card" (click)="selectPerson(person)">
+      <div class="card-body">
+        <h5 class="card-title">{{person.name}}</h5>
+        <p class="card-text">
+            <small class="text-muted">{{person.email}}</small>
+        </p>
+        <a  [routerLink]="['/person', person.id]" class="btn btn-info">See posts</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-person-info *ngIf="selectedPerson" [user]="selectedPerson" (changed)=changed(user)></app-person-info>
+
+<ng-template #loading>
+  cargando
+</ng-template>

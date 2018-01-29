@@ -1,0 +1,13 @@
+
+<app-header></app-header>
+<app-breadcrumb></app-breadcrumb>
+<main class="container-fluid">
+    <router-outlet></router-outlet>
+</main>
+
+<router-outlet name="popup"></router-outlet>
+
+<button (click)="showFooter()" type="button" class="btn btn-light">Show ViewChild Footer</button>
+
+<app-footer #footer *ngIf="true"></app-footer>
+

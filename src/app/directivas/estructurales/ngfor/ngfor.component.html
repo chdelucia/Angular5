@@ -1,0 +1,29 @@
+
+<section>
+    <h1>Simple FOR</h1>
+    El tamñado del array es: {{ personas.length }}
+    <div *ngFor="let persona of simple">
+      {{ persona }}
+    </div>
+  
+    <h1>FOR Objects save operator '?'</h1>
+    <div *ngFor="let persona of personas">
+      {{ persona.nombre }} {{persona.edad}} {{persona.roles?.preferible}}
+    </div>
+  
+    <h1>FOR tricks - Index, first, last, odd, even</h1>
+    <div *ngFor="let persona of personas; 
+                  let i = index,let o = odd; 
+                  let first = first; 
+                  let last = last, 
+                  let e = even">
+      El indice es: {{i}}
+      <br> Es el primero?: {{first}}
+      <br> Es el ultimo?: {{last}}
+      <br> Es par: {{e}}
+      <br> Es impar: {{o}}
+      <br> {{ persona.nombre }} {{persona.edad}} {{persona.roles?.preferible}}
+      <br>
+      <hr>
+    </div>
+  </section>

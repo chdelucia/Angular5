@@ -1,0 +1,14 @@
+<p>
+  La variable que se comprueba es: <strong>{{isSpecial}}</strong> 
+</p>
+
+<h1>Añadir Classes segun condiciones</h1>
+<div #scope [class.test]="true" [ngClass]="{'special': isSpecial, 'no-special': !isSpecial }">
+{{scope.classList | json}}
+</div>
+<br><br>
+
+<h1>Añadir Estilos segun condicion</h1>
+<button (click)="isSpecial=!isSpecial" [style.background-color]="isSpecial ? 'red' : 'green'">
+  Este boton cambia de color
+</button>
