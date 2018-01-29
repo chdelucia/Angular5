@@ -28,10 +28,10 @@ export class PersonService {
     return this.http.get<User[]>(this.userUrl, httpOptions)
       .retry(2)
       .pipe(
-        tap(res => console.table(res)),
-        catchError( this.handleError<User[]>('getUsers', []) )
+      tap(res => console.table(res)),
+      catchError(this.handleError<User[]>('getUsers', []))
       )
-      .finally(() => this.logger.info(this.constructor.name, 'getUsers', 'llamada exitosa') );
+      .finally(() => this.logger.info(this.constructor.name, 'getUsers', 'llamada exitosa'));
   }
 
   getPostsByUserId(id: string): Observable<Post[]> {
@@ -49,24 +49,24 @@ export class PersonService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
     };
-      return this.http.post(this.postsUrl, JSON.stringify({
-        title: 'foo',
-        body: 'bar',
-        userId: 1
-      }), httpOptions)
+    return this.http.post(this.postsUrl, JSON.stringify({
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    }), httpOptions)
       .pipe(
         tap(res => console.table(res)),
-        catchError( this.handleError<User[]>('getUsers', []) )
+        catchError(this.handleError<User[]>('getUsers', []))
       );
-    }
+  }
 
-/**
- * Handle Http operation that failed.
- * Let the app continue.
- * @param operation - name of the operation that failed
- * @param result - optional value to return as the observable result
- */
-private handleError<T>(operation = 'operation', result?: T) {
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
